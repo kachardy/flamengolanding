@@ -128,7 +128,7 @@ nav ul li a:hover:not(.btn-cta) {
 /* --- HERO --- */
 .hero {
     height: 65vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/garotos-jogando.jpg') center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/garotos-jogando.jpg') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
