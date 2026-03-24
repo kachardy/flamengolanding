@@ -26,6 +26,26 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+/* --- CLASSE PARA ANIMAÇÃO DOS CARDS --- */
+/* Estado inicial: Invisível e um pouco abaixo da posição original */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* Estado final: Visível e na posição original */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Para os cards aparecerem um após o outro */
+.grid-unidades .card:nth-child(1) { transition-delay: 0.1s; }
+.grid-unidades .card:nth-child(2) { transition-delay: 0.2s; }
+.grid-unidades .card:nth-child(3) { transition-delay: 0.3s; }
+.grid-unidades .card:nth-child(4) { transition-delay: 0.4s; }
+.grid-unidades .card:nth-child(5) { transition-delay: 0.5s; }
 
 /* --- WHATSAPP FIXO PULSANTE --- */
 .whatsapp-fixed {
