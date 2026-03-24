@@ -1,0 +1,350 @@
+:root {
+    --preto: #111111;
+    --vermelho: #C3271D;
+    --vermelho-dark: #8b1a13;
+    --branco: #FFFFFF;
+    --cinza-claro: #f4f4f4;
+    --whatsapp: #25D366;
+    --insta: #E1306C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- WHATSAPP FIXO PULSANTE --- */
+.whatsapp-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    z-index: 9999;
+    border: 3px solid var(--whatsapp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    animation: pulse-green 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-fixed img {
+    width: 70%;
+    height: auto;
+    display: block;
+}
+
+.whatsapp-fixed:hover {
+    transform: scale(1.1);
+    animation: none; 
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* --- HEADER & NAV --- */
+header {
+    background-color: var(--vermelho);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid var(--preto);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover:not(.btn-cta) {
+    opacity: 0.7;
+}
+
+.btn-cta {
+    background-color: var(--preto);
+    color: var(--branco) !important;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+}
+
+.btn-cta:hover {
+    background-color: transparent;
+    border-color: var(--preto);
+}
+
+/* --- HERO --- */
+.hero {
+    height: 65vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/images/garotos-jogando.jpg') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+/* --- SEÇÃO SOBRE --- */
+.sobre {
+    padding: 80px 0;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.section-title-left {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--vermelho);
+    font-weight: 900;
+}
+
+.sobre-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.beneficios span {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.beneficios i {
+    color: var(--vermelho);
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.sobre-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0 var(--vermelho);
+}
+
+/* --- UNIDADES --- */
+.section-title {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.grid-unidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 80px;
+}
+
+.card {
+    background: var(--cinza-claro);
+    border-radius: 12px;
+    padding: 30px;
+    border-top: 6px solid var(--vermelho);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card h3 {
+    color: var(--vermelho);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* --- BOTÕES GERAIS --- */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--vermelho);
+    color: var(--branco);
+    padding: 15px 32px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    background-color: var(--vermelho-dark);
+}
+
+.btn-outline {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: 2px solid var(--vermelho);
+    color: var(--vermelho);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-outline:hover {
+    background: var(--vermelho);
+    color: white;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--preto);
+    color: var(--branco);
+    padding: 50px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-btn {
+    text-decoration: none;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.footer-btn.insta { background-color: var(--insta); }
+.footer-btn.zap { background-color: var(--whatsapp); }
+
+.footer-btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+    /* Esconde apenas os links de texto, mantém o botão e a logo */
+    nav ul li:not(:last-child) {
+        display: none;
+    }
+
+    .logo img {
+        height: 45px; /* Logo um pouco menor no celular */
+    }
+
+    nav ul li a.btn-cta {
+        margin-left: 0;
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .sobre-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .sobre-image img {
+        box-shadow: 10px 10px 0 var(--vermelho);
+    }
+
+    .beneficios span {
+        justify-content: center;
+    }
+
+    .whatsapp-fixed {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
